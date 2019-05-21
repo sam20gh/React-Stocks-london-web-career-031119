@@ -19,3 +19,4 @@ class StockContainer extends Component {
 }
 
 export default StockContainer;
+s;

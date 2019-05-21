@@ -7,7 +7,7 @@ class MainContainer extends Component {
   state = {
     stocks: [],
     portfolio: [],
-    filter: null
+    selectedStock: null
   };
 
   componentDidMount() {
@@ -23,7 +23,7 @@ class MainContainer extends Component {
         // stocks: this.state.stocks.filter(st => st !== stock)
       });
     } else {
-      alert("You have tjis stock in your portfolio");
+      alert("You have this stock in your portfolio");
     }
   };
 
@@ -35,6 +35,16 @@ class MainContainer extends Component {
       });
     }
     alert(" Item succesfully removed from your portfolio");
+  };
+
+  viewdetails = stock => {
+    if (!this.state.portfolio.includes(stock)) {
+      this.setState({
+        selectedStock: this.state.selectedStock.stock
+      });
+    } else {
+      alert("You have this stock in your portfolio");
+    }
   };
 
   render() {
